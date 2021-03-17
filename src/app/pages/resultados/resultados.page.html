@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Resultados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="ion-padding">
+    <ion-text>Nombre Jugador: </ion-text>
+    <ion-text>{{ ganador.nombre }}</ion-text>
+  </div >
+  <div class="ion-padding">
+    <ion-text>Aciertos: </ion-text>
+    <ion-text>{{ ganador.aciertos }}</ion-text>
+  </div>
+  <div class="ion-padding">
+    <ion-text>Intentos: </ion-text>
+    <ion-text>{{ ganador.intentos }}</ion-text>
+  </div>
+  
+  <ion-button [routerLink]="'/home'">Inicio</ion-button>
+
+
+</ion-content>

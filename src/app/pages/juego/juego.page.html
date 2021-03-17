@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="jugadores.length">
+  <div>
+    <h3>
+      Actual: {{ jugadorActual.nombre }}
+    </h3>
+    Acertados: {{ jugadorActual.aciertos }} <br/>
+    Intentos: {{ jugadorActual.intentos }} <br/>
+  </div>
+  <ion-row>
+    <ion-col *ngFor="let jugador of jugadores">
+      <span>
+        <ion-icon name="star" *ngIf="jugador === jugadorActual"></ion-icon>
+        {{ jugador.nombre }}
+      </span>
+    </ion-col>
+  </ion-row>
+  <app-memoria 
+    [filas]=2
+    [columnas]=2
+    [jugadores]="jugadores.length"
+    (acertado)="chequeaAciertos($event)" 
+    (completado)="terminaJuego()"
+    (jugador)="cambiaJugador($event)">
+  </app-memoria>
+</ion-content>
